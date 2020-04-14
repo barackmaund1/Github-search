@@ -1,0 +1,7 @@
+.form-inline{
+    display: flex;
+    width: 150%;
+}
+#search{
+    margin-left:5px ;
+}
