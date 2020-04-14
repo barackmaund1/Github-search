@@ -1,7 +1,8 @@
 import { User } from './../user-class/user';
-import { ServiceService } from './../http-request/service.service';
+import { Service} from '../service.service'
 import { Repo } from './../repo-class/repo';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-repo',
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class RepoComponent implements OnInit {
   repo:Repo;
   user:User;
-    constructor( public userService:ServiceService,  public repoService:ServiceService) { }
+    constructor( public userService:Service,  public repoService:Service) { }
     search(searchName){
       this.userService.searchUser(searchName).then(
         (success)=>{
