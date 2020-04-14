@@ -1,1 +1,26 @@
-<p>repo works!</p>
+<div class="container">
+    <app-usersearch-form (searchOutput)= "search($event)" class="form"></app-usersearch-form> 
+      <div class="row">
+           <div class="col-md-1"></div>
+           <div class="col-md-10">
+               <div class="all-card">
+                  <div *ngFor='let repository of repo'>
+                      <div class="card-body four">
+                          <a href="{{repository.html_url}}"><h3 class="card-title">{{repository.name}}</h3></a>
+                          <p>{{repository.description}}</p>
+                          <button type="button" class="star1" ><i class="fa fa-star"></i>star</button>
+                            <div class="fa">
+                              <p class="repo4"><i class="fa fa-eye five"></i>&nbsp;{{repository.watchers_count}}</p>
+                              <p class="repo4"><i class="fa fa-language five"></i>&nbsp;{{repository.language}}</p>
+                              <p class="repo4"><i class="fa fa-code-fork five" aria-hidden="true" id="one"></i>&nbsp;{{repository.forks}}</p>
+                              <p class="repo4"><i class="fa fa-clock-o five"></i>&nbsp;{{repository.created_at|pipe}}</p>
+                             
+                            </div>
+                          <hr>
+                     </div>
+                  </div>
+              </div>
+           <div class="col-md-1"></div>
+      </div>
+  </div> 
+  

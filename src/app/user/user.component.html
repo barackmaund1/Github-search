@@ -1,1 +1,52 @@
-<p>user works!</p>
+<div class="container">
+    <ng-progress></ng-progress>
+    <app-usersearch-form (searchOutput)= "search($event)" class="form"></app-usersearch-form> 
+   <div class="row">
+      
+       <div class="col-md-3">
+           <div class="body-cady">
+               <img src="{{user.avatar_url}} " alt="" class="img">
+               <p  class="name"><i class="fa fa-user" style="font-size:20px"></i>&nbsp;{{user.login}}</p> 
+                 <p>Created:<span><i class="fa fa-clock-o date"></i>&nbsp;{{user.created_at|pipe}}</span></p>
+              <p>Updated:<span><i class="fa fa-clock-o date"></i>&nbsp;{{user.updated_at|date}}</span></p> 
+               <a href="{{user.html_url}}" class="git"><i class="fa fa-github" ></i> &nbsp; <span>Github</span></a>
+            </div>
+       </div>
+       <div class="col-md-9">
+           <div class="one">
+               <div class="two">
+                   <p>Overviews<span class="three">{{user.public_gists}}</span></p>
+               </div>
+                <div class="two">
+                    <a routerLink="/repo" ><p>Repositories<span class="three">{{user.public_repos}}</span></p></a>
+                </div>
+                  <div class="two">
+                      <p>Followers<span class="three">{{user.followers}}</span></p>
+                  </div>
+                  <div class="two">
+                      <p>Following<span class="three">{{user.following}}</span></p>
+                 </div>
+           </div>
+           <hr>
+           <div>
+               <h2 class="text-center">Repositories</h2>
+               <div class="allrepos">
+                    <div class="card" *ngFor='let repository of repo'>
+                        <div class="card-body four">
+                            <a href="{{repository.html_url}}"><h3 class="card-title">{{repository.name}}</h3></a>
+                            <p>{{repository.description}}</p>
+                            <button type="button" class="star" ><i class="fa fa-star"></i>star</button>
+                                <div class="line">
+                                    <p class="repo1"><i class="fa fa-language"></i>&nbsp;{{repository.language}}</p>
+                                    <p class="repo"><i class="fa fa-code-fork" aria-hidden="true" id="one"></i>&nbsp;{{repository.forks}}</p>
+                                    <p class="repo2">Updated:<i class="fa fa-clock-o date "></i>&nbsp;{{repository.created_at|pipe}}</p>
+                                </div>
+                            
+                        </div>
+                    </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+
