@@ -55,7 +55,7 @@ export class ServiceService {
     created_at:Date;
    }
    return new Promise((resolve,reject)=>{
-     this.http.get<Response>('https:api.github.com/users/'+searchName+  "/repos?client_id=" + this.client_id + "&client_secret=" + this.client_secret+"order=created&sort=asc?access_token=").toPromise().then(
+     this.http.get<Response>('https:api.github.com/users/'+searchName+  "/repos?client_id=" + this.client_id + "&client_secret=" + this.client_secret+"order=created&sort=asc?").toPromise().then(
        (results)=>{
          this.getRepos=results;
          console.log(this.getRepos)
