@@ -12,17 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepoComponent implements OnInit {
   repo:Repo;
-  user:User;
-    constructor( public userService:Service,  public repoService:ServiceService) { }
-    search(searchName){
-      this.userService.searchUser(searchName).then(
-        (success)=>{
-          this.user=this.userService.getUser;
-        },
-        (error)=>{
-          console.log(error)
-        }
-      );
+  constructor(  public repoService:ServiceService) { }
+  // user:User;
+  //   constructor( public userService:Service,  public repoService:ServiceService) { }
+  //   search(searchName){
+  //     this.userService.searchUser(searchName).then(
+  //       (success)=>{
+  //         this.user=this.userService.getUser;
+  //       },
+  //       (error)=>{
+  //         console.log(error)
+  //       }
+  //     );
+  search(searchName){
       this.repoService.getReposi(searchName).then(
         (results)=>{
           this.repo=this.repoService.getRepos

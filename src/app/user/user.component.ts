@@ -10,19 +10,12 @@ import { ServiceService } from './../http-request/service.service';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  user:User;
+  
   repo:Repo;
   
-    constructor(public userService:Service,public repoService:ServiceService) { }
+    constructor(public repoService:ServiceService) { }
   search(searchName){
-    this.userService.searchUser(searchName).then(
-      (success)=>{
-        this.user=this.userService.getUser;
-      },
-      (error)=>{
-        console.log(error)
-      }
-    );
+    
     this.repoService.getReposi(searchName).then(
       ()=>{
         this.repo=this.repoService.getRepos;
