@@ -1,3 +1,4 @@
+import { ServiceService } from './http-request/service.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -11,7 +12,7 @@ import { NotFoundComponent } from './not-found/not-found.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PipePipe } from './pipe.pipe';
-
+import{ Service } from './service.service'
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
 
@@ -35,7 +36,7 @@ import { NgProgressHttpClientModule } from '@ngx-progressbar/http-client';
     NgProgressModule.forRoot(),
     NgProgressHttpClientModule
   ],
-  providers: [],
+  providers: [ServiceService,Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
